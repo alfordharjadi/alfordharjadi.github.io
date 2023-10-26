@@ -34,6 +34,8 @@
         }
 
         .card-box {
+            margin-left: 75px;
+            scale: 0.7;
             width: 500px;
             height: 750px;
             background-color: #ffffffbb;
@@ -111,12 +113,14 @@
         }
 
         #video1{
+           
             opacity: 1;
             position: fixed;
-            right: 0;
+            /* right: 0;
             bottom: 0;
             min-width: 100%;
-            min-height: 100%;
+            min-height: 100%; */
+            scale: 0.75;
 
 
         }
@@ -186,14 +190,14 @@
                         <button>Lesgo</button>
                     </div>
                     <div class="card-box2" id="card2">
-                        <!-- <div id="player"></div>
-                        <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/RMZOcLlHLAQ" frameborder="0" allowfullscreen></iframe> -->
-                        <!-- <video id="video2" src="final part landscape.mp4"></video> -->
-                        <h1>Video YouTube</h1>
-                        <div id="player"></div>
-                        <button id="playButton">Putar Video</button>
                         
-                        <script src="https://www.youtube.com/iframe_api"></script>
+                        <!-- <iframe id="video2" src="https://drive.google.com/file/d/13bH4QUXzu01TCA1zRh40PJqpxzj-wvBR/preview" width="640" height="360"></iframe> -->
+                        <!-- <iframe id="video2" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe> -->
+
+                         <!-- <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/4WzKNHie8xM?autoplay=1&start=60" frameborder="0" allowfullscreen></iframe> -->
+                        <video id="video2" src="falling in love.webm"></video>
+        
+        
                     </div>
 
                     <div class="card-box3" id="card3">
@@ -234,7 +238,6 @@
         </div>
     </div>
 </body>
-<script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -248,56 +251,18 @@
 
         // Sembunyikan video saat halaman dimuat
         video.style.display = "none";
-        card2.style.display = "block";
+        card2.style.display = "none";
         card3.style.display = "none";
         card4.style.display= "none";
         cbox2.style.display = "none";
 
-        // Inisialisasi variabel
-var player;
-var playButton = document.getElementById('playButton');
-
-// Fungsi untuk memulai pemutaran video
-function playVideo() {
-    player = new YT.Player('player', {
-        height: '315',
-        width: '560',
-        videoId: 'RMZOcLlHLAQ', // Ganti dengan ID video YouTube yang sesuai
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-}
-
-// Fungsi yang dipanggil saat pemutar video siap
-function onPlayerReady(event) {
-    playButton.addEventListener('click', function() {
-        event.target.playVideo();
-    });
-}
-
-// Fungsi yang dipanggil saat status pemutar video berubah
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.ENDED) {
-        // Pemutaran video selesai
-        // Eksekusi skrip lain di sini
-        skripLain();
-    }
-}
-
-// Fungsi untuk menjalankan skrip lain
-function skripLain() {
-    console.log('Skrip lain dieksekusi setelah video selesai diputar.');
-}
-
-// Memuat API YouTube Player
-var tag = document.createElement('script');
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
+     
+        
+        // video2.src = "https://drive.google.com/file/d/13bH4QUXzu01TCA1zRh40PJqpxzj-wvBR/preview?autoplay=1";
+        // video2.contentWindow.document.addEventListener("ended", function() {
+        //                             // Jalankan script lain setelah video selesai diputar
+        //                             alert("hello world");
+        //                         });
            // Menambahkan event listener ke tombol
            button.addEventListener("click", function() {
                         // Munculkan video
@@ -309,6 +274,10 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                         // Putar video secara otomatis
                         video.play();
                         video2.play();
+
+
+                       
+                    
                    
 
                     });
